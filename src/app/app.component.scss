@@ -1,0 +1,14 @@
+.pages {
+  display: flex;
+  flex-direction: column;
+  width:  100%;
+  align-items: center;
+  &__outlet {
+    width: 80%;
+    max-width: 1024px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

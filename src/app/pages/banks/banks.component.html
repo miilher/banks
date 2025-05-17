@@ -1,0 +1,49 @@
+<main class="banks">
+  <h1>Lista de Bancos</h1>
+
+
+  @if (loading === true) {
+    <div class="banks__spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+
+  }
+  @else {
+  <div class="mat-elevation-z8 banks__table">
+    <table mat-table [dataSource]="dataSource" >
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="code">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let element"> {{element.code}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef> Nome completo </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="ispb">
+        <th mat-header-cell *matHeaderCellDef> ISPB </th>
+        <td mat-cell *matCellDef="let element"> {{element.ispb}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator  [hidePageSize]="true" [length]="data.length" (page)="setPage($event)" showFirstLastButtons aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+
+  }
+
+</main>

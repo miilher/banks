@@ -1,0 +1,12 @@
+<header class="header">
+  <div>
+    <button mat-icon-button aria-label="voltar" (click)="back()" >
+      <mat-icon>{{getIcon()}}</mat-icon>
+    </button>
+
+  </div>
+  <nav>
+    <button mat-button (click)="goTo('/')">Home</button>
+    <button mat-button (click)="goTo('/bancos')">Lista de Bancos</button>
+  </nav>
+</header>
